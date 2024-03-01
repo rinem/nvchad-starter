@@ -1,5 +1,30 @@
 local plugins = {
   {
+		"echasnovski/mini.animate",
+		event = "VeryLazy",
+		opts = function(_, opts)
+			opts.scroll = {
+				enable = false,
+			}
+		end,
+	},
+  {
+    "ggandor/leap.nvim",
+    init = function()
+      require("leap").add_default_mappings()
+    end,
+    dependencies = {
+      "tpope/vim-repeat",
+    },
+    lazy=false,
+  },
+  {
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+  };
+  {
     "rcarriga/nvim-notify",
     event = "BufWinEnter",
     config = function()
@@ -11,7 +36,7 @@ local plugins = {
     end,
   },
   {
-  "folke/noice.nvim",
+    "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
       -- Add LSP handler configuration here
@@ -29,7 +54,7 @@ local plugins = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
-      }
+    }
   },
   {
     "tpope/vim-fugitive",
@@ -171,4 +196,3 @@ local plugins = {
   }
 }
 return plugins
-
