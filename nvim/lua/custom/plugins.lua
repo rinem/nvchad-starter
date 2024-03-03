@@ -1,5 +1,10 @@
 local plugins = {
   {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {}
+  },
+  {
     'nvimdev/dashboard-nvim',
     event = 'VimEnter',
     config = function()

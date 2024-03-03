@@ -23,6 +23,9 @@ M.general = {
     ["<C-j>"] = { "<C-w>j", "Window down" },
     ["<C-k>"] = { "<C-w>k", "Window up" },
 
+    ["<A-j>"] = { ":m .+1<CR>==", "Move Line up" },
+    ["<A-k>"] = { ":m .-2<CR>==", "Move line down" },
+
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
 
@@ -63,6 +66,10 @@ M.general = {
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
     ["<"] = { "<gv", "Indent line" },
     [">"] = { ">gv", "Indent line" },
+
+    ["<A-j>"] = { ":m '>+1<CR>gv=gv", "Move Line up" },
+    ["<A-k>"] = { ":m '>-2<CR>gv=gv", "Move line down" },
+
   },
 
   x = {
