@@ -133,7 +133,16 @@ vim.api.nvim_create_autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
   end,
 })
 
--------------------------------------- commands ------------------------------------------
+-- Custom autocmds
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+autocmd('TextYankPost', {
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+})
+
 local new_cmd = vim.api.nvim_create_user_command
 
 new_cmd("NvChadUpdate", function()

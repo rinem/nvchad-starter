@@ -272,6 +272,16 @@ M.nvimtree = {
   },
 }
 
+M.twilight = {
+  plugin = true,
+
+  n = {
+    -- toggle
+    ["tw"] = { ":Twilight<enter>", "Toggle Twilight" },
+
+  },
+}
+
 M.telescope = {
   plugin = true,
 
@@ -468,6 +478,18 @@ M.gitsigns = {
         require("gitsigns").toggle_deleted()
       end,
       "Toggle deleted",
+    },
+  },
+}
+
+M.zen = {
+  plugin = true,
+
+  n = {
+    ["<leader>zz"] = {
+      "<cmd>ZenMode<cr>",
+      "Toggle zen mode",
+      opts,
     },
   },
 }
